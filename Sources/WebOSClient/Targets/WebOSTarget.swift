@@ -16,6 +16,8 @@ public enum WebOSTarget {
     /// Sets the PIN code for pairing with the TV.
     /// - Parameter pin: The PIN code displayed on the TV for pairing.
     case setPin(_ pin: String)
+    
+    case castPhoto(_ url:String)
 
     /// Increases the volume.
     case volumeUp

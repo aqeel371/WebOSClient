@@ -60,6 +60,7 @@ public struct WebOSRequestPayload: Codable {
     var dimension: DimensionSettings?
     var date: String?
     var time: String?
+    var mediaId:String?
 
     public init(
         pin: String? = nil,
@@ -89,7 +90,8 @@ public struct WebOSRequestPayload: Codable {
         subscribe: Bool? = nil,
         dimension: DimensionSettings? = nil,
         date: String? = nil,
-        time: String? = nil
+        time: String? = nil,
+        mediaId:String? = nil
     ) {
         self.pin = pin
         self.forcePairing = forcePairing
@@ -119,6 +121,7 @@ public struct WebOSRequestPayload: Codable {
         self.dimension = dimension
         self.date = date
         self.time = time
+        self.mediaId = mediaId
     }
 
     public enum CodingKeys: String, CodingKey {
@@ -150,6 +153,7 @@ public struct WebOSRequestPayload: Codable {
         case dimension
         case date
         case time
+        case mediaId
     }
 
 }

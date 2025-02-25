@@ -8,6 +8,8 @@ import Foundation
 extension WebOSTarget: WebOSTargetProtocol {
     public var uri: String? {
         switch self {
+        case .castPhoto(let url):
+            return "ssap://media.viewer/open"
         case .setPin:
             return "ssap://pairing/setPin"
         case .volumeUp:
@@ -107,6 +109,9 @@ extension WebOSTarget: WebOSTargetProtocol {
             return .init(type: .request, uri: uri)
         case .setVolume(let volume):
             let payload = WebOSRequestPayload(volume: volume)
+            return .init(type: .request, uri: uri, payload: payload)
+        case .castPhoto(let url):
+            let payload = WebOSRequestPayload(mediaId: url)
             return .init(type: .request, uri: uri, payload: payload)
         case .setMute(let mute):
             let payload = WebOSRequestPayload(mute: mute)
