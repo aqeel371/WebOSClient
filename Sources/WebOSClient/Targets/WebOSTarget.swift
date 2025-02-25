@@ -18,6 +18,8 @@ public enum WebOSTarget {
     case setPin(_ pin: String)
     
     case castPhoto(_ url:String)
+    
+    case stopCasting
 
     /// Increases the volume.
     case volumeUp
